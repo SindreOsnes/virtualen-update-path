@@ -1,6 +1,4 @@
-from importlib.metadata import entry_points
 from setuptools import setup, find_packages
-import virtualenv
 
 VERSION = '0.0.1'
 DESCRIPTION = 'Add folders to path for a virtual environment'
