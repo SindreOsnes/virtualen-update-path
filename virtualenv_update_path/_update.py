@@ -12,5 +12,8 @@ def update_path_in_bat_file(filepath: str, path_addition: str) -> None:
     if not os.path.isdir(path_addition):
         raise FileNotFoundError("Path does not exist")
 
+    if not os.path.exists(filepath):
+        raise FileNotFoundError(f"Bat file '{filepath}' does not exist")
+
     with open(filepath, 'a', encoding='utf8') as f:
         f.write(f'\nset "PATH={path_addition};%PATH%"\n')
