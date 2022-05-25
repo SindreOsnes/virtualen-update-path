@@ -25,7 +25,7 @@ Usage
 
 For updating all supported update paths::
     
-    virtualenv-update-path "<tpath to virtualenv Script folder>" "<folder to include in path>"
+    virtualenv-update-path "<the path to virtualenv Script folder>" "<folder to include in path>"
 
 
 For updating a bat file::
