@@ -10,8 +10,6 @@ def update_path():
 
     args = argument_parser.parse_args()
 
-    str: env_path
-    str: path_addition
     env_path = args.EnvPath
     path_addition = args.PathAddition
 
