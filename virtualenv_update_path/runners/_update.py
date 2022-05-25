@@ -1,5 +1,6 @@
 import argparse
-
+import os
+from .._update import update_path_in_base_file, update_path_in_bat_file
 
 def update_path():
     argument_parser = argparse.ArgumentParser(description="Add a path update to a virualenv")
@@ -9,11 +10,30 @@ def update_path():
 
     args = argument_parser.parse_args()
 
+    str: env_path
+    str: path_addition
     env_path = args.EnvPath
     path_addition = args.PathAddition
 
-    print(env_path)
-    print(path_addition)
+    if os.path.isdir(env_path):
+        # Get the files
+        batch_file = os.path.join(env_path, 'activate.bat')
+        base_file = os.path.join(env_path, 'activate')
+
+        # Update the file
+        update_path_in_base_file(base_file, path_addition)
+        update_path_in_bat_file(batch_file, path_addition)
+
+    # Deal with the various file types
+    elif env_path.endswith('.bat'):
+        update_path_in_bat_file(env_path, path_addition)
+    
+    elif env_path.endswith('activate'):
+        update_path_in_base_file(env_path, path_addition)
+    
+    else:
+        raise NotImplementedError('File type not supported')
+
 
 
 
