@@ -21,6 +21,6 @@ setup(
     },
     install_requires=[
     ],
-    #test_suite='test',
+    test_suite='test',
     python_requires='>=3.7'
 )
