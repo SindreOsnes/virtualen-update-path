@@ -1,6 +1,6 @@
 import argparse
 import os
-from .._update import update_path_in_base_file, update_path_in_bat_file
+from .._update import update_path_in_base_file, update_path_in_bat_file, _verify_folders
 
 def update_path():
     argument_parser = argparse.ArgumentParser(description="Add a path update to a virualenv")
@@ -21,6 +21,8 @@ def update_path():
         base_file = os.path.join(env_path, 'activate')
 
         # Update the file
+        _verify_folders(base_file, path_addition)
+        _verify_folders(batch_file, path_addition)
         update_path_in_base_file(base_file, path_addition)
         update_path_in_bat_file(batch_file, path_addition)
 
