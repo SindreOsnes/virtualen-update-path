@@ -14,9 +14,7 @@ The module functions by appending a path override to the init scripts associated
 #######################
 Installation
 #######################
-This module is pip installable:
-
-.. code-block:: bash
+This module is pip installable::
 
     pip install virtualenv-update-path
 
@@ -25,18 +23,15 @@ Usage
 #######################
 
 
-For updating all supported update paths:
-.. code-block:: bash
+For updating all supported update paths::
     
-    virtualenv-update-path "&ltpath to virtualenv Script folder&gt" "&ltfolder to include in path&gt"
+    virtualenv-update-path "<tpath to virtualenv Script folder>" "<folder to include in path>"
 
 
-For updating a bat file:
-.. code-block:: bash
+For updating a bat file::
     
-    virtualenv-update-path "&ltpath to virtualenv Script folder&gt/activate.bat" "&ltfolder to include in path&gt"
+    virtualenv-update-path "<path to virtualenv Script folder>/activate.bat" "<folder to include in path>"
 
-For updating the base file
-.. code-block:: bash
+For updating the base file::
     
-    virtualenv-update-path "&ltpath to virtualenv Script folder&gt/activate" "&ltfolder to include in path&gt"
+    virtualenv-update-path "<path to virtualenv Script folder>/activate" "<folder to include in path>"
