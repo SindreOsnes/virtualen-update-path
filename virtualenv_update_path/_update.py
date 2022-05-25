@@ -39,7 +39,7 @@ def _verify_folders(filepath: str, path_addition: str) -> None:
     """
 
     if not os.path.isdir(path_addition):
-        raise FileNotFoundError("Path is not a folder")
+        raise FileNotFoundError(f"Path '{path_addition}' is not a folder")
 
     if not os.path.exists(filepath):
         raise FileNotFoundError(f"Bat file '{filepath}' does not exist")
